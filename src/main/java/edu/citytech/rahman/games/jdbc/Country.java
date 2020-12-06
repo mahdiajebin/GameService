@@ -1,13 +1,26 @@
 package edu.citytech.rahman.games.jdbc;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Country {
     //SELECT code, Name, population, indepYear FROM world.country;
+
+@Id
 private String code;
 private String name;
-private long population;
-private int yearOfIndependence;
 
-    public Country(String code, String name, long population, int yearOfIndependence) {
+private long population;
+//has to be lowercase so java dont put an _ inside
+@Column(name = "indepyear")
+private Integer yearOfIndependence;
+
+    public Country() {}
+
+    public Country(String code, String name, long population, Integer yearOfIndependence) {
         this.code = code;
         this.name = name;
         this.population = population;
@@ -39,11 +52,11 @@ private int yearOfIndependence;
         this.population = population;
     }
 
-    public int getYearOfIndependence() {
+    public Integer getYearOfIndependence() {
         return yearOfIndependence;
     }
 
-    public void setYearOfIndependence(int yearOfIndependence) {
+    public void setYearOfIndependence(Integer yearOfIndependence) {
         this.yearOfIndependence = yearOfIndependence;
     }
 

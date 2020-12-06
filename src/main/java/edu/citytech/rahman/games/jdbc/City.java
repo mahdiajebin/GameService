@@ -1,14 +1,23 @@
 package edu.citytech.rahman.games.jdbc;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 //pojo
+@Entity
 public class City {
 //mapping the data from database  to java
     //id, name, countryCode, population
-
+    @Id //pk
     private int id;
     private  String name;
+    //dont convert
+    @Column(name = "countrycode")
     private String countryCode;
     private long population;
+//default constructor
+    public City (){}
 
     public City(int id, String name, String countryCode, long population) {
         this.id = id;

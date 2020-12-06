@@ -4,9 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 //data acces object //data layer //data repository
-public class CityDAO {
-    //pojo City
-   public List<City> findAll() {
+public class CityDAO {   public List<City> findAll() {
 
      List<City> cities = new ArrayList<City>();
 
@@ -40,5 +38,7 @@ public class CityDAO {
       }
       return new ArrayList<City>();
    }
+    //pojo City
+
 
 }
