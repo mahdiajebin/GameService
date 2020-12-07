@@ -1,4 +1,4 @@
-package edu.citytech.rahman.games.jdbc;
+package edu.citytech.rahman.games.jpa.model;
 
 
 import javax.persistence.Column;

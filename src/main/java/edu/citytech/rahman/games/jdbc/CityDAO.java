@@ -1,5 +1,7 @@
 package edu.citytech.rahman.games.jdbc;
 
+import edu.citytech.rahman.games.jpa.model.City;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
