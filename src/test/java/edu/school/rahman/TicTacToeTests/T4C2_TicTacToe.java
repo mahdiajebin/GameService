@@ -1,3 +1,5 @@
+package edu.school.rahman.TicTacToeTests;
+
 import edu.citytech.rahman.games.tictactoe.TicTacToeService;
 import edu.citytech.rahman.games.tictactoe.TicTacToeStatus;
 import org.junit.Test;
@@ -5,14 +7,14 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 
-public class T2_TicTacToe {
+public class T4C2_TicTacToe {
 
 
     @Test
     public void e01(){
         //  http://localhost:9615/game/tictactoe?moves=XXX?OOXOX
        TicTacToeService ts = new TicTacToeService();
-       String moves = "???XXX?OX";
+       String moves = "OXO?XOOX?";
 
         TicTacToeStatus status = ts.getStatus(moves);
         String expected="X";
@@ -28,7 +30,7 @@ public class T2_TicTacToe {
     public void e01B(){
         //  http://localhost:9615/game/tictactoe?moves=OOO?OOXOX
         TicTacToeService ts = new TicTacToeService();
-        String moves = "???XXXXOX";
+        String moves = "XXOXXOXXO";
 
         TicTacToeStatus status = ts.getStatus(moves);
         boolean expected = true;
@@ -43,7 +45,7 @@ public class T2_TicTacToe {
     public void e01C(){
         //  http://localhost:9615/game/tictactoe?moves=?????OXOX
         TicTacToeService ts = new TicTacToeService();
-        String moves = "XXO???XOX";
+        String moves = "??X??OX?X";
 
         TicTacToeStatus status = ts.getStatus(moves);
         boolean expected = false;
@@ -56,13 +58,11 @@ public class T2_TicTacToe {
 
     }
 
-
-
     @Test
     public void e02(){
         //  http://localhost:9615/game/tictactoe?moves=XXX?OOXOX
         TicTacToeService ts = new TicTacToeService();
-        String moves = "???OOO?OX";
+        String moves = "XOX?O??O?";
 
         TicTacToeStatus status = ts.getStatus(moves);
         String expected="O";

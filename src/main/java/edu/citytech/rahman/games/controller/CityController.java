@@ -19,10 +19,13 @@ public class CityController {
 //handle parameters
     @GetMapping("/participation/cities")
 
-    public Iterable<City> getAllCities(@RequestParam(defaultValue = "All" )String countryCode){
-        System.out.println("countryCode: " + countryCode);
+    public Iterable<City> getAllCities(@RequestParam(defaultValue = "All" )String countryCode,
+                                       @RequestParam(defaultValue = "0" )long population){
 
-        var cities = repository.selectCity(countryCode);//.findCityByCountryCode(countryCode);
+
+        //System.out.println("countryCode: " + countryCode);
+
+        var cities = repository.selectCity(countryCode,population);//.findCityByCountryCode(countryCode);
 
         return cities;
     }

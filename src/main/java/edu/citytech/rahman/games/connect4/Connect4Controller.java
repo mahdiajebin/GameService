@@ -1,30 +1,24 @@
-package edu.citytech.rahman.games.controller;
+package edu.citytech.rahman.games.connect4;
 
 
-import edu.citytech.rahman.games.tictactoe.TicTacToeService;
-import edu.citytech.rahman.games.tictactoe.TicTacToeStatus;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TicTacToeController {
+public class Connect4Controller {
 
-//    @Autowired
-//    TicTacToeRepository repository;
+    @GetMapping("/game/connect4")
 
-    @GetMapping("/game/tictactoe")
+    public Connect4Status playGame(@RequestParam String moves){
 
-    public TicTacToeStatus playGame(@RequestParam String moves){
-
-        TicTacToeService service = new TicTacToeService();
-        TicTacToeStatus status = service.getStatus(moves);
+        Connect4Service service = new Connect4Service();
+        Connect4Status status = service.getStatus(moves);
 
         return status;
     }
-
-
+    
 
 //    public Map<String,Object>getTicTacToeInfo(){
 //        Map<String,Object> map = new HashMap<>();

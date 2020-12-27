@@ -15,7 +15,7 @@ public interface CityRepository extends CrudRepository<City, Integer> {
     //JPQL - going after the model not database u = alias
     // ?1 is one parameter
     //weither all or which ever country code user puts
-    @Query("SELECT u FROM City u WHERE (u.countryCode = ?1 OR 'All' = ?1) ORDER BY u.population DESC")
-    List<City> selectCity(String countryCode);
+    @Query("SELECT u FROM City u WHERE (u.countryCode = ?1 OR 'All' = ?1) AND u.population > ?2  ORDER BY u.population DESC")
+    List<City> selectCity(String countryCode, long population);
 
 }
